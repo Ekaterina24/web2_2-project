@@ -1,7 +1,7 @@
-import Vue from 'vue/dist/vue.js'
+import Vue from 'vue/dist/vue'
 import App from './App.vue'
 import VueRouter from 'vue-router'
-import axios from 'axios/dist/axios.min.js'
+import axios from 'axios/dist/axios'
 
 Vue.config.productionTip = false
 Vue.use(VueRouter)
@@ -28,7 +28,7 @@ new Vue({
   },
   mounted() {
     axios
-        .get("./articles.json")
+        .get('./articles.json')
         .then(response => (this.info = response));
   }
 }).$mount('#app')
