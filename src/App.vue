@@ -1,28 +1,25 @@
 <template>
   <div id="app">
-    <h1>LOGO</h1>
-    <div>
-      <router-link to="/main">Главная</router-link>
-      <router-link to="/news">Новости</router-link>
-      <router-link to="/about-us">О нас</router-link>
-
-      <router-view></router-view>
-    </div>
-
-
+    <Header/>
   </div>
 </template>
 
 <script>
-
+import Header from "@/components/Header";
 export default {
   name: 'App',
   components: {
-
-  }
+    Header
+  },
 }
 </script>
 
 <style>
-
+  body {
+    margin: 0;
+    padding: 0;
+  }
+  a {
+    text-decoration: none;
+  }
 </style>

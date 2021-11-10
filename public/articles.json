@@ -1,5 +1,4 @@
-{
-  "articles": [
+[
     {
       "id": 1,
       "date": "01.09.2021",
@@ -57,4 +56,3 @@
       "desc": "Curabitur nec suscipit lorem. Duis sit amet ligula hendrerit, mattis libero vel, facilisis nisi. Maecenas et urna fermentum, hendrerit quam sed, malesuada velit. Fusce ut nisi varius, sodales tortor in, viverra tellus. Quisque faucibus consectetur volutpat. Donec tincidunt massa justo, vel euismod orci dignissim nec. Sed quis aliquet leo. Duis efficitur eu neque eget congue. Aliquam vehicula interdum ante non sollicitudin. Nam efficitur, nulla vel blandit vehicula, augue justo convallis dui, et bibendum purus dui ac odio. Duis scelerisque elementum felis, sit amet condimentum nibh pellentesque vitae. Mauris sollicitudin vitae mi a sagittis. Proin ac interdum enim."
     }
   ]
-}
