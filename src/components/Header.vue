@@ -31,6 +31,12 @@
         >
           <router-link to="/about">О нас</router-link>
         </v-btn>
+        <v-btn
+            text
+            color="#FFFFFF"
+        >
+          <router-link to="/gallery">Галерея</router-link>
+        </v-btn>
       </v-toolbar-items>
       <v-spacer></v-spacer>
       <v-text-field
