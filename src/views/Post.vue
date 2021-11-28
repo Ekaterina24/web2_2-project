@@ -16,14 +16,17 @@
         to="/posts"
         class="back"
     >Назад</router-link>
+    <Comments />
   </div>
 </template>
 
 <script>
 import axios from "axios";
+import Comments from "@/components/Comments";
 
 export default {
   name: "Post",
+  components: {Comments},
   data() {
     return {
       id: this.$route.params['id'],
