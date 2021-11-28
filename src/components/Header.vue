@@ -1,46 +1,83 @@
 <template>
-<div class="header">
-  <div class="content">
-    <div class="header__logo">
-      <img src="../assets/LEGO-Logo.png" alt="logo">
-    </div>
-    <div class="header__menu">
-      <router-link to="/">Главная</router-link>
-      <router-link to="/posts">Новости</router-link>
-      <router-link to="/about">О нас</router-link>
-    </div>
-  </div>
-  <router-view></router-view>
-</div>
+  <v-container>
+    <v-toolbar
+        color="purple lighten-1"
+        flat
+    >
+      <v-img
+          alt="logo"
+          src="../assets/LEGO-Logo.png"
+          max-width="70"
+      ></v-img>
+      <v-toolbar-items>
+        <v-btn
+            text
+            color="#FFFFFF"
+        >
+          <router-link
+              to="/"
+              color="#FFFFFF"
+          >Главная</router-link>
+        </v-btn>
+        <v-btn
+            text
+            color="#FFFFFF"
+        >
+          <router-link to="/posts">Новости</router-link>
+        </v-btn>
+        <v-btn
+            text
+            color="#FFFFFF"
+        >
+          <router-link to="/about">О нас</router-link>
+        </v-btn>
+      </v-toolbar-items>
+      <v-spacer></v-spacer>
+      <v-text-field
+          @focus="searchClosed = false"
+          @blur="searchClosed = true"
+          v-model="search"
+          class="search mt-6"
+          :class="{ 'closed' : searchClosed && !search }"
+          placeholder="Поиск"
+          prepend-inner-icon="mdi-magnify"
+          filled
+          dense
+          clearable
+      ></v-text-field>
+    </v-toolbar>
+  </v-container>
 </template>
 
 <script>
 export default {
-name: "Header"
+name: "Header",
+  data: () => ({
+    search: null,
+  searchClosed: true,
+}),
 }
 </script>
 
 <style scoped>
-  img {
-    width: 75px;
-    height: 40px;
-  }
+.v-application a {
+  color: white;
+  text-decoration: none;
+}
+.v-input.search {
+  transition: max-width 0.3s;
+}
 
-  .content {
-    padding: 20px;
-    display: flex;
-    align-items: center;
-    background-color: #a96de3;
-  }
+.v-input.search .v-input__slot .v-input__slot:before, .v-input.search .v-input__slot .v-input__slot:before {
+    border-color: transparent !important;
+  border-style: none;
+}
+.v-input.search.closed{
+  max-width: 45px;
+}
 
-  .header__menu {
-    width: 300px;
-    display: flex;
-    justify-content: space-between;
-    margin-left: 100px;
-  }
+.v-input.search.closed.v-input__slot {
+  background: transparent !important;
+}
 
-  a {
-    color: white;
-  }
 </style>

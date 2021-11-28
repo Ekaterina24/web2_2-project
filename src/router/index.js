@@ -1,8 +1,10 @@
-import VueRouter from "vue-router"
-import Main from "@/components/Main";
-import Posts from "@/components/Posts";
-import Post from "@/components/Post";
-import AboutUs from "@/components/AboutUs";
+import Vue from 'vue/dist/vue';
+import VueRouter from "vue-router";
+import Main from "@/views/Main";
+import Posts from "@/views/Posts";
+import Post from "@/views/Post";
+import AboutUs from "@/views/AboutUs";
+Vue.use(VueRouter)
 
 const routes = [
     { path: '/', component: Main },
@@ -12,6 +14,8 @@ const routes = [
 ]
 
 const router = new VueRouter({
+    mode: 'history',
+    base: process.env.BASE_URL,
     routes
 })
 
