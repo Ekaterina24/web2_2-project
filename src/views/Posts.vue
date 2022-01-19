@@ -2,11 +2,11 @@
   <div class="wrapper">
     <h1>Статьи</h1>
 <div
-    class="d-flex justify-space-around mb-6 flex-wrap"
+    class="d-flex pa-2 flex-wrap justify-start"
 >
     <v-card
-        v-for="(article, index) in info"
-        :key="index"
+        v-for="article in info"
+        :key="article.id"
         class="mx-auto card"
         max-width="344"
     >
@@ -16,7 +16,9 @@
       ></v-img>
 
       <v-card-title>
-        <router-link :to="`/post/${index+1}`">{{ article.name }}</router-link>
+        <router-link
+            :to="{ name: 'post', params: { id: article.id } }"
+        >{{ article.name }}</router-link>
       </v-card-title>
 
       <v-card-subtitle>
@@ -34,12 +36,12 @@ export default {
   name: "Posts",
   data() {
     return {
-      info: [],
+      info: []
     };
   },
   mounted() {
     axios
-        .get('./articles.json')
+        .get('http://demo-api.vsdev.space/api/articles')
         .then(response => (this.info = response.data));
   }
 }

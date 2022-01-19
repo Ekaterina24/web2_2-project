@@ -1,7 +1,6 @@
 <template>
   <div class="wrapper">
-    <h1>{{ info[id-1].name }}</h1>
-
+    <h1>{{ this.post.name }}</h1>
     <v-img
         src="images/full.jpeg"
         height="200px"
@@ -10,33 +9,33 @@
         style="background-color: blue;"
     ></v-img>
 
-    <div class="date">{{ info[id-1].date }}</div>
-    <p class="text">{{ info[id-1].desc }}</p>
+    <div class="date">{{ this.post.date }}</div>
+    <p class="text">{{ this.post.desc }}</p>
     <router-link
         to="/posts"
         class="back"
     >Назад</router-link>
-    <Comments />
+    <Comments v-bind:id="this.$route.params.id" />
   </div>
 </template>
 
 <script>
 import axios from "axios";
-import Comments from "@/components/Comments";
+import Comments from "../components/Comments";
+
 
 export default {
   name: "Post",
   components: {Comments},
   data() {
     return {
-      id: this.$route.params['id'],
-      info: []
+      post: {}
     };
   },
   mounted() {
     axios
-        .get('../articles.json')
-        .then(response => (this.info = response.data));
+        .get(`http://demo-api.vsdev.space/api/articles/${this.$route.params.id}`)
+        .then(response => (this.post = response.data));
   }
 }
 </script>

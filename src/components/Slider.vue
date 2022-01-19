@@ -29,7 +29,7 @@ export default {
   },
   mounted() {
     axios
-        .get('./articles.json')
+        .get('http://demo-api.vsdev.space/api/articles')
         .then(response => (this.items = response.data));
   },
   computed:{
