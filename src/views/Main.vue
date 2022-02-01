@@ -12,10 +12,7 @@
 import Slider from "@/components/Slider";
 export default {
 name: "Main",
-  components: {Slider},
-  data () {
-
-  },
+  components: {Slider}
 }
 </script>
 
