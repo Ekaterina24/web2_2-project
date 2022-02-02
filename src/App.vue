@@ -5,7 +5,7 @@
           app
           color="purple lighten-1"
       >
-        <Header />
+        <Header  />
       </v-app-bar>
 
       <v-main>
@@ -22,7 +22,6 @@ export default {
   name: 'App',
   components: {
     Header
-
   },
 
   data: () => ({
